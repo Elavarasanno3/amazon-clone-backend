@@ -1,7 +1,6 @@
 package com.elavarasanno3.amazonclone.model;
 
 import jakarta.persistence.*;
-import java.util.List;
 
 @Entity
 public class User {
@@ -17,15 +16,11 @@ public class User {
     @Transient
     private String confirmPassword;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Cart> carts;
-
+    // Constructors
     public User() {
     }
 
     // Getters and Setters
-
-    // id
     public long getId() {
         return id;
     }
@@ -34,7 +29,6 @@ public class User {
         this.id = id;
     }
 
-    // name
     public String getName() {
         return name;
     }
@@ -43,7 +37,6 @@ public class User {
         this.name = name;
     }
 
-    // emailId
     public String getEmailId() {
         return emailId;
     }
@@ -52,7 +45,6 @@ public class User {
         this.emailId = emailId;
     }
 
-    // phoneNumber
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -61,7 +53,6 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    // password
     public String getPassword() {
         return password;
     }
@@ -70,7 +61,6 @@ public class User {
         this.password = password;
     }
 
-    // address
     public String getAddress() {
         return address;
     }
@@ -79,21 +69,11 @@ public class User {
         this.address = address;
     }
 
-    // confirmPassword
     public String getConfirmPassword() {
         return confirmPassword;
     }
 
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
-    }
-
-    // carts
-    public List<Cart> getCarts() {
-        return carts;
-    }
-
-    public void setCarts(List<Cart> carts) {
-        this.carts = carts;
     }
 }

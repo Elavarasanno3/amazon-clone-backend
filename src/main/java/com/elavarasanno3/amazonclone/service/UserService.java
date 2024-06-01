@@ -20,4 +20,10 @@ public class UserService {
     public void saveUser(User user) {
         userRepository.save(user);
     }
+
+    // Find a user by email
+    public User findByEmail(String email) {
+        return userRepository.findByEmailId(email)
+                .orElseThrow(() -> new IllegalArgumentException("User not found"));
+    }
 }

@@ -1,7 +1,6 @@
 package com.elavarasanno3.amazonclone.model;
 
 import jakarta.persistence.*;
-import java.util.List;
 
 @Entity
 public class Product {
@@ -11,7 +10,7 @@ public class Product {
     private String name;
     private double amount;
     private double ratings;
-    private int qty;
+    private int qty ;
 
     @Lob
     @Column(columnDefinition = "LONGBLOB")
@@ -20,15 +19,11 @@ public class Product {
     @Transient
     private String imageString;
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
-    private List<Cart> carts;
-
+    // Constructors
     public Product() {
     }
 
     // Getters and Setters
-
-    // id
     public Long getId() {
         return id;
     }
@@ -37,7 +32,6 @@ public class Product {
         this.id = id;
     }
 
-    // name
     public String getName() {
         return name;
     }
@@ -46,7 +40,6 @@ public class Product {
         this.name = name;
     }
 
-    // amount
     public double getAmount() {
         return amount;
     }
@@ -55,7 +48,6 @@ public class Product {
         this.amount = amount;
     }
 
-    // ratings
     public double getRatings() {
         return ratings;
     }
@@ -64,7 +56,6 @@ public class Product {
         this.ratings = ratings;
     }
 
-    // qty
     public int getQty() {
         return qty;
     }
@@ -73,7 +64,6 @@ public class Product {
         this.qty = qty;
     }
 
-    // image
     public byte[] getImage() {
         return image;
     }
@@ -82,21 +72,11 @@ public class Product {
         this.image = image;
     }
 
-    // imageString
     public String getImageString() {
         return imageString;
     }
 
     public void setImageString(String imageString) {
         this.imageString = imageString;
-    }
-
-    // carts
-    public List<Cart> getCarts() {
-        return carts;
-    }
-
-    public void setCarts(List<Cart> carts) {
-        this.carts = carts;
     }
 }
